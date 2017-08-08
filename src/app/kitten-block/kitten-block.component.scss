@@ -6,6 +6,9 @@ $button-dimension: 35px;
     display: block;
     padding: 2em;
     max-width: 100%;
+    &:hover {
+        transform: scale(1.1);
+    }
     .inner {
         transition: 450ms ease all;
         overflow: hidden;
