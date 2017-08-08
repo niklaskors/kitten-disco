@@ -1,8 +1,9 @@
 # KittenDisco
 
 Shows random cat gifs from the following API: http://thecatapi.com/api/images/get?format=src&type=gif.
+
 Requests are send in parallel and are immediately pushed to the view on response.
-This project showcases the power of Reactive programming with Angular.
+This project shows the power of Reactive programming with Angular.
 
 ## Development server
 
