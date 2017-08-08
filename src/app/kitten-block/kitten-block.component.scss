@@ -1,7 +1,74 @@
+@import '../../../node_modules/animate-scss/animate.scss';
+$button-dimension: 35px;
 :host {
+    @include fadeIn($duration: 2s);
+    transition: 450ms ease all;
     display: block;
     padding: 2em;
-    img {
-        box-shadow: 0 0 40px 1px rgba(0, 0, 0, 0.4)
+    max-width: 100%;
+    .inner {
+        transition: 450ms ease all;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 1px solid #1f1f1f;
+        &.saved {
+            border-bottom: 5px solid #e33d5a;
+            button.love {
+                bottom: 20px;
+                opacity: 1;
+            }
+            &:hover {
+                button.trash {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+        &:hover {
+            button.love {
+                bottom: 20px;
+                opacity: 1;
+            }
+        }
+        img {
+            display: block;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            box-shadow: 0 0 40px 1px rgba(0, 0, 0, 0.4)
+        }
+        button.love,
+        button.trash {
+            opacity: 0;
+            background-color: #e33d5a;
+            border: none;
+            border-radius: 100%;
+            padding: 0.2em;
+            transition: 200ms ease;
+            width: $button-dimension;
+            height: $button-dimension;
+            bottom: -$button-dimension;
+            right: 20px;
+            position: absolute;
+            &:hover {
+                cursor: pointer;
+            }
+            i {
+                font-size: 1.5em;
+                color: white;
+            }
+            &:focus {
+                outline: none;
+            }
+            &.love {
+                box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
+            }
+            &.trash {
+                visibility: hidden;
+                bottom: 20px;
+            }
+        }
     }
 }

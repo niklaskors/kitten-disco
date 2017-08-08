@@ -1,1 +1,8 @@
-<app-kitten-block *ngFor="let kittenUrl of kittenUrls$ | async" [url]="kittenUrl"></app-kitten-block>
+<!-- <masonry #grid>
+  <masonry-brick *ngFor="let kittenUrl of kittenUrls$ | async"> -->
+<!-- <div class="grid" *ngIf="kittenUrls$ | async"> -->
+<app-kitten-block class="grid-item" *ngFor="let kittenUrl of kittenUrls$ | async" [url]="kittenUrl"></app-kitten-block>
+<!-- </div>/ -->
+<!-- </masonry-brick>
+</masonry> -->
+<div class="fade"><span>Loading more kitties</span></div>

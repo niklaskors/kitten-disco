@@ -1,3 +1,4 @@
+import { KittenApiService } from './../kitten-api.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +9,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class KittenBlockComponent implements OnInit {
   @Input() public url: string;
 
-  constructor() { }
+  constructor(private kittenApiService: KittenApiService) { }
 
   ngOnInit() {
   }
 
+  public isSaved(): boolean {
+    return this.kittenApiService.isSaved(this.url);
+  }
+
+  public save(): void {
+    this.kittenApiService.saveKitten(this.url);
+  }
+
+  public delete(): void {
+    this.kittenApiService.deleteKitten(this.url);
+  }
 }

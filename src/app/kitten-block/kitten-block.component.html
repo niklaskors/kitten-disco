@@ -1,1 +1,5 @@
-<img [src]="url" alt="">
+<div class="inner" [ngClass]="{'saved' : isSaved()}">
+  <img [src]="url" alt="kitten gif">
+  <button (click)="save()" class="love"><i class="fa fa-heart" aria-hidden="true"></i></button>
+  <button (click)="delete()" class="trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+</div>
